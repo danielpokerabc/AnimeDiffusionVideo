@@ -1,6 +1,6 @@
 # AnimeDiffusion - PyTorch Lightning Implementation
 
-This project is a PyTorch Lightning-based implementation of the original AnimeDiffusion repository ([xq-meng/AnimeDiffusion](https://github.com/xq-meng/AnimeDiffusion)). The code has been restructured and adapted to take advantage of PyTorch Lightning's modularity, scalability, and ease of experimentation. This README explains the purpose of each file and its role in the training and testing pipeline.
+This project is a PyTorch Lightning-based implementation of the original AnimeDiffusion repositorys ([xq-meng/AnimeDiffusion](https://github.com/xq-meng/AnimeDiffusion)) and ([Giventicket/AnimeDiffusion_Modified](https://github.com/Giventicket/AnimeDiffusion_Modified)). The code has been restructured and adapted to take advantage of PyTorch Lightning's modularity, scalability, and ease of experimentation. This README explains the purpose of each file and its role in the training and testing pipeline.
 
 ---
 
