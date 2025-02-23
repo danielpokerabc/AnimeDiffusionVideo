@@ -57,16 +57,16 @@ def parse_arguments():
     
     # Data Paths
     parser.add_argument('--train_reference_path', type=str, 
-                        default='/data/AnimeDiffusion Dataset/train_data/reference/', 
+                        default='/kaggle/working/AnimeDiffusionVideo/data/AnimeDiffusion Dataset/train_data/reference/', 
                         help='Path to reference data')
     parser.add_argument('--train_condition_path', type=str, 
-                        default='/data/AnimeDiffusion Dataset/train_data/sketch/', 
+                        default='/kaggle/working/AnimeDiffusionVideo/data/AnimeDiffusion Dataset/train_data/sketch/', 
                         help='Path to condition data')
     parser.add_argument('--test_reference_path', type=str, 
-                        default='/data/AnimeDiffusion Dataset/test_data/reference/', 
+                        default='/kaggle/working/AnimeDiffusionVideo/data/AnimeDiffusion Dataset/test_data/reference/', 
                         help='Path to reference data')
     parser.add_argument('--test_condition_path', type=str, 
-                        default='/data/AnimeDiffusion Dataset/test_data/sketch/', 
+                        default='/kaggle/working/AnimeDiffusionVideo/data/AnimeDiffusion Dataset/test_data/sketch/', 
                         help='Path to condition data')
     
     # Batch Sizes
