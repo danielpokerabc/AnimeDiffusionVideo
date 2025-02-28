@@ -20,7 +20,9 @@ def parse_arguments():
                         help='Number of training epochs')
     parser.add_argument('--resume', type=lambda x: bool(strtobool(x)), default=False,  
                         help='Resume training from the last checkpoint')
-
+    parser.add_argument('--test_output_dir', type=str, 
+                        default='./result/', 
+                        help='Directory for test outputs')
     # Diretório para checkpoints
     parser.add_argument('--checkpoint_dir', type=str, default='./logs/lightning_logs/version_0/checkpoints/', 
                         help='Directory for saving checkpoints')
