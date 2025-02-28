@@ -129,15 +129,24 @@ if __name__ == "__main__":
     model = AnimeDiffusion(cfg)  # <-- ✅ Agora 'linear_start' e outros parâmetros estão no cfg!
 
     # Carregar checkpoint se --resume for True
+    import os
+
+    # Defina um caminho inicial, caso você queira começar a busca de uma pasta específica
+    start_folder = '/kaggle/working/logs/'  # Defina o caminho inicial da pasta de busca
+
+    # Carregar checkpoint se --resume for True
     last_checkpoint = None
     if cfg.resume and os.path.exists(cfg.checkpoint_dir):
+        # Modifique aqui: busque apenas dentro da pasta start_folder
         checkpoints = sorted(
-            [f for f in os.listdir(cfg.checkpoint_dir) if f.endswith(".ckpt")],
-            key=lambda x: os.path.getmtime(os.path.join(cfg.checkpoint_dir, x))
+            [f for f in os.listdir(start_folder) if f.endswith(".ckpt")],
+            key=lambda x: os.path.getmtime(os.path.join(start_folder, x))
         )
+        
         if checkpoints:
-            last_checkpoint = os.path.join(cfg.checkpoint_dir, checkpoints[-1])  
+            last_checkpoint = os.path.join(start_folder, checkpoints[-1])  
             print(f"✅ Retomando do checkpoint: {last_checkpoint}")
+    
 
     # Treinamento
     if cfg.do_train:
