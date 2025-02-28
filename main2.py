@@ -112,6 +112,7 @@ if __name__ == "__main__":
 
     # Trainer configuration com precisão determinística
     trainer = pl.Trainer(
+        accumulate_grad_batches=2,  # Isso acumula gradientes de 2 lotes antes de fazer o update
         default_root_dir="./",
         devices=cfg.gpus,
         accelerator="cuda",
@@ -123,7 +124,6 @@ if __name__ == "__main__":
         callbacks=[checkpoint_callback],
         strategy="ddp_find_unused_parameters_true",
         deterministic=True,
-        accumulate_grad_batches=2,  # Isso acumula gradientes de 2 lotes antes de fazer o update
     )
 
     # Instanciando o modelo
