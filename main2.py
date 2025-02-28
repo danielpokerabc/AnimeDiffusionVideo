@@ -122,7 +122,8 @@ if __name__ == "__main__":
         logger=[tb_logger],
         callbacks=[checkpoint_callback],
         strategy="ddp_find_unused_parameters_true",
-        deterministic=True,  
+        deterministic=True,
+        accumulate_grad_batches=2,  # Isso acumula gradientes de 2 lotes antes de fazer o update
     )
 
     # Instanciando o modelo
